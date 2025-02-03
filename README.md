@@ -1,7 +1,6 @@
 # Primary school management 
 
-flutter for frontend 
-firebase for backend 
+frontend flutter with firebase 
 
 code isn't clean 
 
