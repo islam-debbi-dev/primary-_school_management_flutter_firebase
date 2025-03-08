@@ -2,6 +2,5 @@
 
 frontend flutter with firebase 
 
-code isn't clean 
-
+this project isn't clen code 
 
