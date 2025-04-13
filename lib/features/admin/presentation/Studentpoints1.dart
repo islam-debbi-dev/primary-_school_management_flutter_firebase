@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/DesignText.dart';
+import '../../../widgets/DesignText.dart';
 import 'Studentpoints2.dart';
 
 class Studentpoints1 extends StatelessWidget {

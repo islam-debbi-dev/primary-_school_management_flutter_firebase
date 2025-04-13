@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import 'ProfileTeacherForTeacher.dart';
+import 'profile_teacher_for_teacher.dart';
 
 class ListTeacherForTeacher extends StatefulWidget {
   const ListTeacherForTeacher({super.key});

@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../../widgets/removespeace.dart';
+import '../../../widgets/removespeace.dart';
 
-class addteacher extends StatefulWidget {
+class AddTeacher extends StatefulWidget {
   static const String screenroute = 'addteacher ';
 
-  const addteacher({super.key});
+  const AddTeacher({super.key});
 
   @override
   _AddTeacherState createState() => _AddTeacherState();
 }
 
-class _AddTeacherState extends State<addteacher> {
+class _AddTeacherState extends State<AddTeacher> {
   String placeofresidence = 'Msila';
   String AcademicLevel = '0';
   String gender = '';

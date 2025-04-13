@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:for_chat/core/helper/extention.dart';
 import 'package:lottie/lottie.dart'; // Import the lottie package
-import '../widgets/removespeace.dart';
-import 'Teacher/home_teacher.dart';
-import 'Student/home_student.dart';
-import 'Admin/home-admin.dart';
+import '../../../../widgets/removespeace.dart';
+import '/core/router/constants_route.dart';
 
 class LoginPage extends StatefulWidget {
   static const String screenroute = 'LoginPage';
@@ -159,16 +158,22 @@ class _LoginPageState extends State<LoginPage> {
   void _redirectToPage(String role, String firstName, String email) {
     switch (role) {
       case 'Student':
-        Navigator.pushReplacementNamed(context, homestudent.screenroute,
-            arguments: {'firstName': firstName, 'email': email});
+        context.pushNamed(homeStudentRoute, arguments: {
+          'firstName': firstName,
+          'email': email,
+        });
         break;
       case 'Teacher':
-        Navigator.pushReplacementNamed(context, hometeacher.screenroute,
-            arguments: {'firstName': firstName, 'email': email});
+        context.pushNamed(homeTeacherRoute, arguments: {
+          'firstName': firstName,
+          'email': email,
+        });
         break;
       case 'admin':
-        Navigator.pushReplacementNamed(context, homeadmin.screenroute,
-            arguments: {'firstName': firstName, 'email': email});
+        context.pushNamed(homeAdminRoute, arguments: {
+          'firstName': firstName,
+          'email': email,
+        });
         break;
       default:
         // Handle unexpected role

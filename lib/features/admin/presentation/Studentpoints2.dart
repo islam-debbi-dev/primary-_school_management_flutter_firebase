@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/DesignTectFormFiald.dart';
+import '../../../widgets/DesignTectFormFiald.dart';
 
 class Studentpoints2 extends StatefulWidget {
   final String studentId;

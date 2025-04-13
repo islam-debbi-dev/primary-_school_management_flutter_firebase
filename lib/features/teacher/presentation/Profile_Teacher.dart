@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../Admin/updateteacher.dart';
+import '../../admin/presentation/updateteacher.dart';
 
 import 'package:for_chat/widgets/DesignText.dart';
 

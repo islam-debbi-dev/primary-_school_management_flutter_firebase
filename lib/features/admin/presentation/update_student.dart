@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../../widgets/DesignTectFormFiald.dart';
+import '../../../widgets/DesignTectFormFiald.dart';
 
 class UpdateStudentPage extends StatefulWidget {
   final String studentId;

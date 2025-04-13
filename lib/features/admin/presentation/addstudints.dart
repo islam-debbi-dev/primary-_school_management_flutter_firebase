@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../../widgets/removespeace.dart';
+import '../../../widgets/removespeace.dart';
 
 class MyHomePage extends StatefulWidget {
   static const String screenroute = 'MyHomePage';

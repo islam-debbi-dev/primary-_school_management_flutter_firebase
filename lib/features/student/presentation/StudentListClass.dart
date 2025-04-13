@@ -1,16 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class ListStudentsForStudednt extends StatefulWidget {
-  const ListStudentsForStudednt({super.key});
+class Studentlistclass extends StatefulWidget {
+  const Studentlistclass({super.key});
   static const screenroute = 'ListStudentsForStudednt';
 
   @override
-  State<ListStudentsForStudednt> createState() =>
-      _ListStudentsForStudedntState();
+  State<Studentlistclass> createState() => _ListStudentsForStudedntState();
 }
 
-class _ListStudentsForStudedntState extends State<ListStudentsForStudednt> {
+class _ListStudentsForStudedntState extends State<Studentlistclass> {
   String AcademicLevel = '0';
   String numClass = '1';
 

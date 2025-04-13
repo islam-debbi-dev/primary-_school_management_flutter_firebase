@@ -1,25 +1,25 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:for_chat/screens/Admin/addteacher.dart';
-import 'package:for_chat/screens/Admin/listteacher.dart';
+import 'package:for_chat/core/helper/extention.dart';
+import 'package:for_chat/features/admin/presentation/add_teacher.dart';
+import 'package:for_chat/features/admin/presentation/listteacher.dart';
 import 'package:intl/intl.dart';
-import '../Admin//liststudents.dart';
 import 'LoginRequests.dart';
 import 'MessagesForStdents.dart';
 import 'SendToTeacher.dart';
 import 'Studentpoints.dart';
 import 'addstudints.dart';
-import '../../widgets/Dataservice.dart';
+import '../../../widgets/Dataservice.dart';
 
-class homeadmin extends StatefulWidget {
-  const homeadmin({super.key});
+class HomeAdmin extends StatefulWidget {
+  const HomeAdmin({super.key});
   static const String screenroute = 'homeadmin';
 
   @override
-  State<homeadmin> createState() => _homeadminState();
+  State<HomeAdmin> createState() => _homeadminState();
 }
 
-class _homeadminState extends State<homeadmin> {
+class _homeadminState extends State<HomeAdmin> {
   final DatabaseService dbService = DatabaseService();
   String AcademicLevel = '0';
   String numClass = '1';
@@ -50,10 +50,9 @@ class _homeadminState extends State<homeadmin> {
 
   @override
   Widget build(BuildContext context) {
-    final String firstName = (ModalRoute.of(context)!.settings.arguments
-        as Map<String, dynamic>)['firstName'];
-    final String email = (ModalRoute.of(context)!.settings.arguments
-        as Map<String, dynamic>)['email'];
+    final String firstName = 'islam';
+    // (ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>)['firstName'];
+    final String email = 'islam';
 
     return WillPopScope(
       onWillPop: _onWillPop,
@@ -172,7 +171,7 @@ class _homeadminState extends State<homeadmin> {
                     textAlign: TextAlign.center,
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, addteacher.screenroute);
+                    Navigator.pushNamed(context, AddTeacher.screenroute);
                   },
                 ),
               ),
@@ -201,7 +200,7 @@ class _homeadminState extends State<homeadmin> {
                     textAlign: TextAlign.center,
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, listteachers.screenroute);
+                    Navigator.pushNamed(context, ListTeachers.screenroute);
                   },
                 ),
               ),
@@ -259,7 +258,7 @@ class _homeadminState extends State<homeadmin> {
                     textAlign: TextAlign.center,
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, liststudents.screenroute);
+                    //   Navigator.pushNamed(context, liststudents.screenroute);
                   },
                 ),
               ),

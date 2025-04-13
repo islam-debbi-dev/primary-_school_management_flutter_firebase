@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/DesignText.dart';
-import '../Admin/Update_Student.dart';
+import '../../../widgets/DesignText.dart';
+import '../../admin/presentation/update_student.dart';
 
 class ProfileStudentPage extends StatelessWidget {
   final String ProfileStudentID;

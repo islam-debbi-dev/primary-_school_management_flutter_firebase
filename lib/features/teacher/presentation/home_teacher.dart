@@ -1,19 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:for_chat/core/helper/extention.dart';
 import 'package:intl/intl.dart';
-import '../Admin/Studentpoints.dart';
-import 'ListStudetTeacher.dart';
-import 'ListTeachersForTeachers.dart';
+import '../../../core/router/constants_route.dart';
+import '../../admin/presentation/Studentpoints.dart';
+import 'list_student_teacher.dart';
 
-class hometeacher extends StatefulWidget {
-  const hometeacher({super.key});
+class HomeTeacher extends StatefulWidget {
+  const HomeTeacher({super.key});
   static const String screenroute = 'hometeacher';
 
   @override
-  State<hometeacher> createState() => _hometeacherState();
+  State<HomeTeacher> createState() => _hometeacherState();
 }
 
-class _hometeacherState extends State<hometeacher> {
+class _hometeacherState extends State<HomeTeacher> {
   Future<bool> _onWillPop() async {
     return (await showDialog(
           context: context,
@@ -210,8 +211,9 @@ class _hometeacherState extends State<hometeacher> {
                     textAlign: TextAlign.center,
                   ),
                   onTap: () {
-                    Navigator.pushNamed(
-                        context, ListTeacherForTeacher.screenroute);
+                    context.pushNamed(teacherListTeachersRoute);
+                    // Navigator.pushNamed(
+                    //     context, ListTeacherForTeacher.screenroute);
                   },
                 ),
               ),

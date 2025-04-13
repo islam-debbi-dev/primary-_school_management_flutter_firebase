@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class homestudent extends StatefulWidget {
-  const homestudent({super.key});
+class HomeStudent extends StatefulWidget {
+  const HomeStudent({super.key});
   static const String screenroute = 'homestudent';
   @override
-  State<homestudent> createState() => _homestudentState();
+  State<HomeStudent> createState() => _homestudentState();
 }
 
-class _homestudentState extends State<homestudent> {
+class _homestudentState extends State<HomeStudent> {
   final PageController _pageController = PageController(initialPage: 0);
   Future<bool> _onWillPop() async {
     return (await showDialog(

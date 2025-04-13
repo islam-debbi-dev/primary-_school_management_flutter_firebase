@@ -1,63 +1,19 @@
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:for_chat/screens/Student/Profil_Student.dart';
+import 'package:flutter/material.dart';
 
-class liststudents extends StatefulWidget {
-  const liststudents({super.key});
-  static const screenroute = 'liststudents';
+import 'profile_student_teacher.dart';
+
+class ListStudentTeacher extends StatefulWidget {
+  const ListStudentTeacher({super.key});
+  static const screenroute = 'ListStudentTeacher';
 
   @override
-  State<liststudents> createState() => _liststudentsState();
+  State<ListStudentTeacher> createState() => _ListStudentTeacherState();
 }
 
-class _liststudentsState extends State<liststudents> {
+class _ListStudentTeacherState extends State<ListStudentTeacher> {
   String AcademicLevel = '0';
   String numClass = '1';
-
-  void _removeUser(String userId) {
-    FirebaseFirestore.instance
-        .collection('Users')
-        .doc(userId)
-        .delete()
-        .then((_) {
-      // Handle success, maybe show a message or update UI
-    }).catchError((error) {
-      // Handle errors
-      print("Error removing user: $error");
-    });
-  }
-
-  void _showDeleteConfirmationDialog(String userId) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Builder(
-          builder: (context) {
-            return AlertDialog(
-              title: const Text('Confirm Deletion'),
-              content: const Text('Are you sure you want to delete this user?'),
-              actions: <Widget>[
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop(); // Close the dialog
-                  },
-                  child: const Text('Cancel'),
-                ),
-                TextButton(
-                  onPressed: () {
-                    _removeUser(userId); // Call the method to remove the user
-                    Navigator.of(context).pop(); // Close the dialog
-                  },
-                  child: const Text('Delete'),
-                ),
-              ],
-            );
-          },
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +39,7 @@ class _liststudentsState extends State<liststudents> {
                   'List of Options',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: 24,
                   ),
                 ),
               ),
@@ -208,7 +164,7 @@ class _liststudentsState extends State<liststudents> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -217,7 +173,7 @@ class _liststudentsState extends State<liststudents> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  width: 250,
+                  width: 300,
                   height: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
@@ -226,7 +182,7 @@ class _liststudentsState extends State<liststudents> {
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 4, horizontal: 25),
                     child: Text(
-                      'First Name' '         Last Name',
+                      '                   Full Name',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -258,7 +214,7 @@ class _liststudentsState extends State<liststudents> {
                             Padding(
                               padding: const EdgeInsets.only(bottom: 5),
                               child: Container(
-                                width: 250,
+                                width: 300,
                                 height: 30,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
@@ -267,7 +223,7 @@ class _liststudentsState extends State<liststudents> {
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 4, horizontal: 25),
                                   child: Text(
-                                    '${user['firstname']}                 ${user['lastname']}',
+                                    '         ${user['firstname']}       ${user['lastname']}',
                                     style: const TextStyle(
                                       color: Colors.white,
                                     ),
@@ -279,22 +235,12 @@ class _liststudentsState extends State<liststudents> {
                               onPressed: () {
                                 Navigator.of(context)
                                     .push(MaterialPageRoute(builder: (_) {
-                                  return ProfileStudentPage(
-                                      ProfileStudentID: user.id);
+                                  return ProfileStudentTeacher(
+                                      ProfileStudentTID: user.id);
                                 }));
                               },
                               icon: const Icon(Icons.supervised_user_circle),
                               iconSize: 30, // Adjust icon size as needed
-                            ),
-                            SizedBox(
-                              width: 30,
-                              child: IconButton(
-                                onPressed: () {
-                                  _showDeleteConfirmationDialog(user.id);
-                                },
-                                icon: const Icon(Icons.delete_forever),
-                                iconSize: 30, // Adjust icon size as needed
-                              ),
                             ),
                           ],
                         ),

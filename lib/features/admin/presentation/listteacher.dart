@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../Teacher/Profile_Teacher.dart';
+import '../../teacher/presentation/Profile_Teacher.dart';
 
-class listteachers extends StatefulWidget {
-  const listteachers({super.key});
+class ListTeachers extends StatefulWidget {
+  const ListTeachers({super.key});
   static const screenroute = 'listteachers';
 
   @override
-  State<listteachers> createState() => _ListTeachersState();
+  State<ListTeachers> createState() => _ListTeachersState();
 }
 
-class _ListTeachersState extends State<listteachers> {
+class _ListTeachersState extends State<ListTeachers> {
   String AcademicLevel = '0';
   String numClass = '1';
 
