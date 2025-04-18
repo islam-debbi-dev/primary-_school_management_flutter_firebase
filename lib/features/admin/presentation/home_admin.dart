@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:for_chat/core/helper/extention.dart';
 import 'package:for_chat/features/admin/presentation/add_teacher.dart';
 import 'package:for_chat/features/admin/presentation/listteacher.dart';
 import 'package:intl/intl.dart';
@@ -12,9 +11,11 @@ import 'addstudints.dart';
 import '../../../widgets/Dataservice.dart';
 
 class HomeAdmin extends StatefulWidget {
-  const HomeAdmin({super.key});
+  const HomeAdmin(
+      {super.key, required this.firstnameargu, required this.email});
   static const String screenroute = 'homeadmin';
-
+  final String firstnameargu;
+  final String email;
   @override
   State<HomeAdmin> createState() => _homeadminState();
 }
@@ -111,7 +112,6 @@ class _homeadminState extends State<HomeAdmin> {
                     Navigator.pushNamed(
                         context, MessagesForStudents.screenroute);
                   },
-      
                 ),
               ),
               const SizedBox(
