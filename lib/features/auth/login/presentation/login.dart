@@ -159,20 +159,20 @@ class _LoginPageState extends State<LoginPage> {
     switch (role) {
       case 'Student':
         context.pushNamed(homeStudentRoute, arguments: {
-          'firstName': firstName,
-          'email': email,
+          firstName,
+          email,
         });
         break;
       case 'Teacher':
         context.pushNamed(homeTeacherRoute, arguments: {
-          'firstName': firstName,
-          'email': email,
+          firstName,
+          email,
         });
         break;
       case 'admin':
         context.pushNamed(homeAdminRoute, arguments: {
-          'firstName': firstName,
-          'email': email,
+          firstName,
+          email,
         });
         break;
       default:

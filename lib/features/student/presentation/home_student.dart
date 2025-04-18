@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class HomeStudent extends StatefulWidget {
-  const HomeStudent({super.key});
+  const HomeStudent(
+      {super.key, required this.firstnameargu, required this.email});
   static const String screenroute = 'homestudent';
+  final String firstnameargu;
+  final String email;
   @override
   State<HomeStudent> createState() => _homestudentState();
 }
