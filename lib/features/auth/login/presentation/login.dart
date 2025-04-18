@@ -17,8 +17,6 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
 
-  String _loggedInUserName = '';
-  String _loggedInemailUserName = '';
   bool _isLoading = false; // New variable to track loading state
   bool _loginSuccess = false; // New variable to track login success
   bool _buttonClicked = false;
