@@ -7,8 +7,11 @@ import '../../admin/presentation/Studentpoints.dart';
 import 'list_student_teacher.dart';
 
 class HomeTeacher extends StatefulWidget {
-  const HomeTeacher({super.key});
+  const HomeTeacher(
+      {super.key, required this.firstnameargu, required this.email});
   static const String screenroute = 'hometeacher';
+  final String firstnameargu;
+  final String email;
 
   @override
   State<HomeTeacher> createState() => _hometeacherState();

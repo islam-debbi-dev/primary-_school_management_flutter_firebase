@@ -17,12 +17,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return ScreenUtilInit(
-    //     // Define the design size (e.g., based on your Figma/XD design)
-    //     designSize: const Size(360, 690), // Example size, adjust as needed
-    //     minTextAdapt: true, // Adapt text size
-    //     splitScreenMode: true, // Support split screen mode
-    //     builder: (context, child) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Your School',
@@ -30,7 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.cyan,
       ),
       onGenerateRoute: appRouter.generateRoute,
-      initialRoute: loginRoute,
+      initialRoute: testfirabsepage,
     );
   }
   // );

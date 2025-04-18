@@ -84,9 +84,6 @@ class _LoginPageState extends State<LoginPage> {
       String role = querySnapshot.docs.first.get('role');
       _redirectToPage(role, firstName, email);
       setState(() {
-        _loggedInUserName =
-            firstName; // Assuming first name is used to display user's name
-        _loggedInemailUserName = email;
         _loginSuccess = true; // Set login success to true
         _emailController.clear();
         _firstNameController.clear();
@@ -402,7 +399,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 30,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
                   child: ElevatedButton(
                     onPressed: () {

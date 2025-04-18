@@ -45,11 +45,14 @@ class AppRouter {
         return buildSimpleRoute(const TestFireBase());
       case loginRoute:
         return buildSimpleRoute(LoginPage());
-      case '/':
-        return buildSimpleRoute(HomeAdmin(settings.arguments));
 
       case homeAdminRoute:
-        return buildSimpleRoute(HomeAdmin(settings.arguments));
+        final firstName = settings.arguments;
+        final email = settings.arguments;
+        return buildSimpleRoute(HomeAdmin(
+          firstnameargu: firstName.toString(),
+          email: email.toString(),
+        ));
       case adminListStudentsRoute:
         return buildSimpleRoute(ListStudents());
       case adminAddTeacherRoute:
@@ -113,7 +116,12 @@ class AppRouter {
         return errorRoute(settings.name);
 
       case homeStudentRoute:
-        return buildSimpleRoute(HomeStudent(settings.arguments));
+        final firstName = settings.arguments;
+        final email = settings.arguments;
+        return buildSimpleRoute(HomeStudent(
+          firstnameargu: firstName.toString(),
+          email: email.toString(),
+        ));
       case studentProfileRoute:
         if (arguments is Map<String, dynamic> &&
             arguments.containsKey('ProfileStudentID')) {
