@@ -2,5 +2,6 @@
 
 frontend flutter with firebase 
 
-this project isn't clen code 
+clean 
+firebase 
 
